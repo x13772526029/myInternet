@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<title>dsad </title>
+<!-- 	<style type="text/css">
+.ip{
+	background: red;
+	color:red;
+	width: 20px;
+	height: 20px;
+	}
+	.ip:checked{ outline: 5px solid red; 
+		}</style> -->
+		<style type="text/css">
+
+		
+	</style>
+	<script src="js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+$(function(){ 
+
+    sectionLength = $(".content section").size();
+    //锚点跳转滑动效果 
+    $('a[href*=#],area[href*=#]').click(function() { 
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) { 
+            var $target = $(this.hash); 
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']'); 
+            if ($target.length) { 
+                var targetOffset = $target.offset().top; 
+                $('html,body').animate({ 
+                            scrollTop: targetOffset 
+                        }, 
+                        1000); 
+                return false; 
+            } 
+        } 
+    }); 
+
+}) 
+	/*	function createJs(sUrl){
+			var oScript = document.createElement('script');
+			oScript.type = 'text/javascript';
+			oScript.src = sUrl;
+			document.getElementsByTagName('head')[0].appendChild(oScript);
+		}
+		createJs('jsonp.js?callback=box');
+		function box(json){
+			alert(json.name);
+		}
+	
+
+	www.a.com/c1.html
+
+	www.a.com/daili.html
+
+	www.b.com/c2.html : window.name = 'shuju';
+    
+
+	jsonp单域操作
+	hash为双域操作
+
+
+
+	减少Dom的操作
+    
+    Dom与浏览器
+
+	querySelect 
+	var ali = document.querySelectorAll("#ul1 li");
+
+
+    window.onload = function(){
+    	var oUl = document.
+    }
+
+java
+*/
+
+	</script>
+	<!-- <script type="text/javascript" src="jsonp.js"></script> -->
+</head> 
+<body>
+     <div></div>
+
+
+<!-- jquery.tmpl(); -->
+
+<script type="text/javascript">
+	/*	$(function(){
+	      aii = function(){
+			alert("1");
+		}
+	})*/
+	
+</script>
+
+
+
+
+	<!-- <input type="checkbox" class="ip">
+	<p>视图是查询命令构成的一个虚拟表，他并非真实存在，本质是【根据SQL语句获取动态的数据集，并为其命名】，用户使用时只需要查询视图名称就可以获取结果集合，可以当做表来查询使用。
+	既然是一张虚拟表，那工作中有什么用呢？
+	安全性与性能提升，是一张表，那就可以绑定用户相应权限，提高安全性。
+	简化操作，当我们遇到很复杂的查询语句时，就可以先创建视图，每次使用视图查询，是不是方便了很多。
+	
+	创建视图的格式：CREATE VIEW 视图名称 AS SQL</p>
+	<span>--格式：v1为视图名称</br>
+	CREATE VIEW v1 AS</br>
+	SELET　nid,</br>
+	        name</br>
+	        FROM </br>
+	        A</br>
+	        WHERE</br>
+	        nid>4</br>
+	删除视图的格式：DROP VIEW 视图名称</br>
+	
+	DROP VIEW v1</br>
+	
+	
+	修改视图的格式：ALTER VIEW 视图名称AS SQL语句</br>
+	
+	ALTER VIEW v1 AS</br>
+	SELET A.nid,</br>
+	      B.NAME</br>
+	 FROM</br>
+	
+	     A</br>
+	     LEFT JOIN B ON A.id  = B.nid</br>
+	      LEFT JOIN C ON A.id  = C.nid</br>
+	      WHERE</br>
+	         A.id > 2</br>
+	         AND C.id < 5</br>
+	视图的使用和普通表使用方法一样，由于视图是虚拟的一张表，所以无法对其对应的表进行更改和删除操作，仅作查询使用</br>
+	
+	select*from v1</br>
+	        </span>
+	        <p>触发器
+	      触发器就是监测增删改操作，一旦触发即激活相应操作
+	      对某个表进行增删改的操作之前或之后触发一些操作即为触发器，可以理解为一个特殊的存储过程，存储过程见下。
+	      那我们在工作中怎么用呢？
+	      首先是审计，数据库审计是在任何一家公司都要有需求的，小编之前给地都n个政府机关及知名外企做过数据库审计的项目。
+	      在数据库插入，修改，删除之前或之后激活相应策略操作，记录一份。不要问我项目环境如何做，这个吉米，懂吗。
+	      在小编之前公司，有那触发器做实时备份的，咳咳，生产环境的实战项目见下篇文章吧。
+	      说说小编写过的吧，每次插入完数据实时发送相关人员审核，当数目达到一定个数时，发送相关人员报警提醒。</br>
+	
+	      插入前</br>
+	      CREATE TEIGGER tri_before_insert_tb1 BRFORE INSERT ON tb1 FOR EACH ROW BEGIN </br> 
+	        ...</br>
+	        END</br>
+	      插入后</br>
+	      CREATE TEIGGER tri_after_insert_tb1 BRFORE INSERT ON tb1 FOR EACH ROW BEGIN  </br>
+	        ...</br>
+	        END</br>
+	
+	
+	        </p>
+	       -->
+
+</body>
+</html>
