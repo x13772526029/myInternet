@@ -1,0 +1,98 @@
+*{padding: 0;margin:0;}
+  body{
+    background-color: #ebdb3d;
+    -webkit-transition: background-color 400ms ease-in-out;
+    -ms-transition: background-color 400ms ease-in-out;
+    -o-transition: background-color 400ms ease-in-out;
+    -moz-transition: background-color 400ms ease-in-out;
+    transition: background-color 400ms ease-in-out;
+    font: normal 100% Helvetica, Arial, sans-serif;
+
+  }
+  body,html{overflow: hidden;width: 100%;height: 100%;position: absolute;}
+  .container1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    
+  }
+  #output {
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 400ms ease-in-out;
+    -ms-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+  }
+
+  .headt span:nth-child(1){top: 10%;font-size: 2.6em;position: absolute;}
+  .headt span:nth-child(2){
+    top: 16%;
+    font-size: 1.7em;
+    position: absolute;
+    left: 11%;
+    }
+  .headt span:nth-child(3){
+    top: 23%;
+    font-size: 1.3em;
+    position: absolute;
+    left: 12%;
+    }
+  .headt span:nth-child(4){
+    top: 27%;
+    font-size: 0.8em;
+    position: absolute;
+    left: 44%;
+    }
+ .headt span:nth-child(5){
+    top: 26%;
+    font-size: 1.2em;
+    position: absolute;
+    left: 57%;
+    }
+    .car{
+  width: 100%;
+  height: 100%;
+  background: url(../../bootstrap/images/car.gif)no-repeat;
+  background-size:100%;
+  position: absolute;
+  left: 0;
+  top: 58%;
+  opacity: 0;
+  overflow: hidden;
+  }
+  .bas{
+  width: 100%;
+  height: 100%;
+  background: url(../../bootstrap/images/basketball.gif)no-repeat;
+  background-size:100%;
+  position: absolute;
+  left: 0;
+  top: 56%;
+  opacity: 0;
+  }
+    .head{
+  width: 100%;
+  height: 100%;
+  background: url(../../bootstrap/images/fight.gif)no-repeat;
+  background-size: 100%;
+  position: absolute;
+  left: 0;
+  top: 76%;
+  opacity: 0;
+  }
+.gang{
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: url(../../bootstrap/images/gang.jpg)no-repeat;
+  left: 0;
+  top: -2%;
+  opacity: 0;
+  display: none;
+}
+
+
+

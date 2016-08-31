@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+</head>
+<body>
+<select  class="sel1"></select>
+<select  class="sel2"></select>
+<select  class="sel3"></select></br>
+<input type="text" placeholder="请输入5-10字段"></br>
+<input type="button" value="提交">
+<script src="js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+           //请求路径
+           var url="bianji.php";
+           //option默认内容
+           var option="<option value='0'>未选择</option>";
+           //获取jq对象
+           var $sel1=$(".sel1");
+           var $sel2=$(".sel2");
+           var $sel3=$(".sel3");
+           //自动生成一个<option>元素
+           function createOption(value,text){
+               var $option=$("<option></option>");
+               $option.attr("value",value);
+               $option.text(text);
+               return $option;
+           }
+           //加载数据
+           function ajaxSelect($select,id){
+               //get请求
+               $.get(url,{"pid":id},function(data){
+                   $select.html(option);
+                   for(var k in data ){
+                       $select.append(createOption(data[k].id,data[k].name));
+                   }
+               },"json");
+           }
+
+           //自动加载第一个下拉菜单
+           ajaxSelect($sel1,"0");
+
+           //选择第一个下拉菜单时加载第二个
+            $sel1.change(function(){
+                var id=$sel1.val();
+                if(id=="0"){
+                    $sel2.html(option);
+                    $sel3.html(option);
+                }else{
+                    ajaxSelect($sel2,id);
+                }
+            });
+
+           //选择第二个下拉菜单时加载第三个
+           $sel2.change(function(){
+               var $id=$sel2.val();
+               if($id=="0"){
+                   $sel3.html(option);
+               }else{
+                   ajaxSelect($sel3,$id);
+               }
+           });
+       });
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+	<title>抽奖</title>
+	<style type="text/css">
+	*{padding: 0;margin:0;}
+	body,html{width: 100%;height: 100%;overflow: hidden;}
+	.chou{width: 100%;height: 100%;}
+	.chou .contain{width: 500px;height: 500px;border-radius: 20px;  box-shadow: 1px 8px 12px 3px #615558;position: absolute;top: 22%;
+    left: 36%;}
+	.ps{    font-size: 20px;
+    color: #615558;
+    position: absolute;
+    top: 20%;
+    left: 24%;
+    opacity: 1;
+    display: block;
+}
+	.sp1{font-size: 45px;color:#ed37c0;font-weight: 900;}
+	.sp2{font-size: 35px;color:#d6264b;}
+	.ipt1{    position: relative;
+    width: 144px;
+    height: 47px;
+    top: 53%;
+    left: 35%;
+    background-color: #cd6f45;
+    border-radius: 20px;
+    box-shadow: 1px 8px 12px 3px #615558;
+    outline: none;}
+    img{position: absolute;width: 100%;height: 100%;opacity: 0;display: none;top: 0%;}
+    .pp{    font-size: 45px;
+    color: #d6264b;
+    width: 16%;
+    height: 8%;
+    font-weight: 900;
+    opacity: 0;
+    position: absolute;
+    content: "";
+    margin: auto;
+    left: 4%;
+    right: 0;
+    top:10%;
+
+
+  }
+	</style>
+</head>
+<body>
+<div class="chou">
+<p class="pp"></p>
+<div class="contain">
+	<p class="ps">你还有<span class="sp1">十</span>次必得一个<span class="sp2">帅哥</span></p></br>
+
+	<input type="button" value="点击抽取" name="请点击按钮" class="ipt1">
+<img src="">
+</div>
+
+</div>
+		<script src="js/jquery-1.12.0.min.js"></script>
+		<script type="text/javascript">
+			 $(document).ready(function(){
+
+			 	var attr = new Array();
+
+			 	var N = [
+    "十", "九", "八", "七", "六", "五", "四", "三", "二","一"
+];
+  var B = [
+    "A 单身凛冽", "A 时意凛冽", "B 屌丝凛冽", "C 打死凛冽", "A 吃货凛冽", "B 豆豆凛冽", "C 银川凛冽", "D 当当凛冽", "S 纳兰凛冽","S 张琳凛冽"
+];
+function convertToChinese(num){
+    var str = num.toString();
+    var len = num.toString().length;
+    var C_Num = [];
+    for(var i = 0; i < len; i++){
+        C_Num.push(N[str.charAt(i)]);
+    }
+    return C_Num.join('');
+}
+
+            $(".ipt1").click(function(){
+            	attr.push(attr.length);
+              $(".sp1").html(convertToChinese(attr.length));
+              console.log(attr);
+              if(attr.length==10){
+
+              	attr.length = 0;
+              	$(".sp1").html(convertToChinese(attr.length));
+              	 console.log(attr);
+    
+              }
+
+               var n = Math.floor(Math.random()*10); 
+               if(n==0){
+               	n = 2;
+               }
+               if(attr.length==0){
+                n = 0;
+                  $(".pp").html("SS 世界和平");
+
+               }
+               else{
+                $(".pp").html(B[n-1]);
+               }
+              console.log(n);
+
+              
+       $("img").attr("src", "images/"+(n+100)+".jpg")
+
+       $(".ps").animate({opacity:'0'},2000);
+       $(".ps").css("display","none");
+       $("img").delay(1500).css("display","block");
+       $("img").delay(1500).animate({opacity:'1'},500)
+
+       $(".pp").delay(1500).animate({opacity:'1'},500)
+ }) 
+    $("img").click(function(){
+     $("img").delay(1200).css("display","none");
+     $("img").animate({opacity:'0'});
+     $(".ps").delay(1000).animate({opacity:'1'},500);
+     $(".ps").delay(1000).css("display","block");
+      $(".pp").delay(1000).animate({opacity:'0'},500)
+    })
+  })
+		</script>
+</body>
+</html>
+
+
+
+
